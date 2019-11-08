@@ -35,12 +35,12 @@ myeth=$(myssh "$item" "cat /etc/network/interfaces" | grep iface | grep -v "ifac
 localout=${2:-"/tmp/tcpdump.$id.pcap"}
 if [[ "$myeth" != "" ]]; then
   myssh $test "$item" "sudo tcpdump -i $myeth -w /tmp/tcpdump.pcap"
-  echo "Stopped tcpdump"
+  echo "Stopped tcpdump" 
+  myssh "$item" "sudo killall tcpdump" 
+  echo "Kill all existed"
   rsync -razvP $item:/tmp/tcpdump.pcap $localout
   echo "File is downloaded to $localout"
 else
   echo "Cannot load the ether from external server"
 fi
 
-# Kill all existed
-myssh "$item" "sudo killall tcpdump"
