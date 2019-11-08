@@ -36,7 +36,7 @@ localout=${2:-"/tmp/tcpdump.$id.pcap"}
 if [[ "$myeth" != "" ]]; then
   myssh $test "$item" "sudo tcpdump -i $myeth -w /tmp/tcpdump.pcap"
   echo "Stopped tcpdump"
-  rsync $item:/tmp/tcpdump.pcap $localout
+  rsync -razvP $item:/tmp/tcpdump.pcap $localout
   echo "File is downloaded to $localout"
 else
   echo "Cannot load the ether from external server"
