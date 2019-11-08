@@ -41,3 +41,6 @@ if [[ "$myeth" != "" ]]; then
 else
   echo "Cannot load the ether from external server"
 fi
+
+# Kill all existed
+myssh "$item" "sudo killall tcpdump"
