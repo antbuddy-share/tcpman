@@ -1,6 +1,6 @@
 # Introduce
 
-tcpdump server in your local. The tcpman will run tcp in target server and save to local file in your machine
+The script is to track tcp packets of target server right at your local computer. The tcpman will run tcpdump in target server and save to local file in your machine.
 
 # Usage
 `tcpman SERVER-TARGET LOCALFILETOSAVE`
