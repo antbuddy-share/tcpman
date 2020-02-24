@@ -5,6 +5,9 @@ tcpdump server in your local. The tcpman will run tcp in target server and save 
 # Usage
 `tcpman SERVER-TARGET LOCALFILETOSAVE`
 
+Example:
+- tcpman kz-07.sv ~/mb.pcap
+
 
 # Setup
 
